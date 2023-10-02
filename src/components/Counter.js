@@ -1,15 +1,15 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'; // llama a los métodos del redux y trae las propiedades
+import { counterActions } from '../store/counter-slice'; // llama a los métodos del redux
 import { useState } from 'react';
-import { counterActions } from '../store/counter';
 
 import classes from './Counter.module.css';
 
 const Counter = () => {
   const [hideCounterState, setHideCounterState] = useState(false);
 
-  const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter.counter);
-  const hideCounterRedux = useSelector((state) => state.counter.hideCounterRedux);
+  const dispatch = useDispatch(); // llama a los métodos del redux
+  const counter = useSelector((state) => state.counter.counter); // muestra la propiedad counter del redux
+  const hideCounterRedux = useSelector((state) => state.counter.hideCounterRedux); // muestra la propiedad hideCounter del redux
 
   const toggleCounterHandler = () => {
     // setHideCounterState(!hideCounterState);
